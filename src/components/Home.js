@@ -47,7 +47,9 @@ export default class Home extends Component {
     componentDidMount() {
         booksService.getAllBooks().then(res => {
             this.setState({ booksList: res.data })
-        });
+        }) .catch(() => {
+            window.location.href = "/logout";
+          });
         memberService.getMember(currentUser.id).then(res => {
             this.setState({currentUser:res.data})
         })

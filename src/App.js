@@ -22,7 +22,7 @@ const App = () => {
 
     if (user) {
       setCurrentUser(user);
-      setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
+      setShowAdminBoard(user.roles.includes("ADMIN"));
     }
 
     EventBus.on("logout", () => {
@@ -57,7 +57,7 @@ const App = () => {
           {showAdminBoard && (
             <li className="nav-item">
               <Link to={"/admin"} className="nav-link">
-                Admin Board
+                Admin
               </Link>
             </li>
           )}
